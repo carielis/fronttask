@@ -2,9 +2,8 @@ import { useMutation } from "@apollo/client";
 import { Field, Form, Formik } from "formik";
 import React, {useState } from "react"
 import styled from "styled-components"
-import Cookies from "universal-cookie/es6";
 
-import { authorization } from "../graphql/user";
+import { authorization, registration } from "../graphql/user";
 
 const Container = styled.div`
     margin: auto;
@@ -24,22 +23,18 @@ const ButtonSignIn = styled.button`
     margin-left: 50px;
 `
  
-export const Auth = () => {
-    const cookies = new Cookies();
-    
-    const [login, {data}] = useMutation(authorization)
+export const Reg = () => {
+    const [register] = useMutation(registration)
     return(
       <Container>
           <div style={{textAlign: 'center'}}>
-              Авторизация
+              Регистрация
           </div>
          <FormContainer>
           <Formik
           initialValues={{username: '', password: ''}}
           onSubmit={async (values) => {
-                await login({variables: {username: values.username, password: values.password}})
-                await cookies.set('Authorization', data.login.token)
-
+                await register({variables: {username: values.username, password: values.password}})
             }
           }
           >
