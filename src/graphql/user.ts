@@ -36,3 +36,11 @@ export const sendMessage = gql`
         }
     }
 `
+
+export const getUsers = gql`
+    query{
+        users{
+            username
+        }
+    }
+`

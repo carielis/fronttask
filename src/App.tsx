@@ -9,40 +9,36 @@ import { Auth } from './Components/auth';
 import { Header } from './Components/header';
 import { Reg } from './Components/registration';
 import { Chat } from './Components/chat';
+ 
 
 
 
-
-
+const SafeArea = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-image: url( "https://clck.ru/T3Xok") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: auto;
+`
 
 const Root = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 95vh;
-
-  background-color: purple;
-
 `
 
 function App() {
 
   return (
     <ApolloProvider client={client}>
+      <SafeArea>
+      <Header />
       
-    <Header />
-
-    <Root>
-    
-   
-    <Route  path='/login' component={Auth} />
-    
-    <Route  path='/registration' component={Reg} />
-    <Route  path='/chat' component={Chat} />
- 
-   
-    </Root>
-    
+      <Route  path='/login' component={Auth} />
+      <Route  path='/registration' component={Reg} />
+      <Route  path='/chat' component={Chat} />
+      </SafeArea>
     </ApolloProvider>
   );
 }
