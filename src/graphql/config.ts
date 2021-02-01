@@ -24,7 +24,7 @@ const httpLink = createHttpLink({
   
   export const client = new ApolloClient({
     link: authLink.concat(httpLink) ,
-    uri: "34.229.74.246:4000/graphql",
+    uri: "ec2-34-229-74-246.compute-1.amazonaws.com:4000/graphql",
   
     cache: new InMemoryCache(),
     defaultOptions: {
