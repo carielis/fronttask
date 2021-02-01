@@ -153,7 +153,7 @@ export const Chat = () => {
     
    
     useEffect(() : any  =>  {
-      scrolling.current.scrollTo(0,scrolling.current.scrollHeight)
+      return scrolling.current.scrollTo(0,scrolling.current.scrollHeight)
     }, [msg]);
    
 // Считываем куки, для того чтоб посмотреть какие сообщения мои // 
@@ -176,7 +176,7 @@ export const Chat = () => {
                     <div>{item.message}</div>
                 </Message >
             )}
-             <div ref={scrolling} />
+            
             </ScrollContainer>
      <FormContainer>
      <Formik 
@@ -193,7 +193,6 @@ export const Chat = () => {
         <Form 
         style={{
           display: 'flex',
-          
           position: 'relative', 
           height: 80,
           }}>

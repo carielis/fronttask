@@ -120,9 +120,7 @@ export const Reg = () => {
             }}>
                 <Form>
                     <div style={{position: 'relative'}}>
-                    <img 
-                    style={{position: "absolute",height: 30, top: 20, left: -15, color: 'white'}}
-                    src="https://img.icons8.com/pastel-glyph/64/000000/person-male--v1.png"/>
+                    
                     <InputField 
                         style={{
                         width: 160
@@ -133,9 +131,7 @@ export const Reg = () => {
                          />
                     </div>
                     <div style={{position: 'relative'}}>
-                    <img 
-                    style={{position: "absolute",height: 30, top: 20, left: -15}}
-                    src="https://img.icons8.com/ios/50/000000/forgot-password.png"/>
+                  
                     <InputField 
                         style={{
                         paddingRight: 30 
