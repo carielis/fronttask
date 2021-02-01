@@ -6,7 +6,7 @@ import { Field, Form, Formik } from "formik";
 
 import { useMutation } from "@apollo/client";
 import { registration } from "../graphql/user";
-import { SvgPassword } from "./UI/SVG/password";
+import { SvgPassword, SvgPasswordUnlock } from "./UI/SVG/password";
 
 const Container = styled.div`
 box-shadow:1px 1px 100px 1px rgba(255,255,255,1);
@@ -143,16 +143,16 @@ export const Reg = () => {
                         type={showPassword ? 'text' : 'password'}
                         placeholder="Password"
                         name="password" />
-                   {showPassword ? 
+                   {!showPassword ? 
                     <SvgPassword
                         onClick={() => setShow(!showPassword)}
                         style={{position: "absolute",height: 25, top: 25, right: 20}}
                         />
                     :
-                     <img
+                     <SvgPasswordUnlock
                         onClick={() => setShow(!showPassword)} 
                         style={{position: "absolute",height: 25, top: 25, right: 20}}
-                        src="https://img.icons8.com/ios-filled/50/000000/show-password.png"/>   
+                        />   
                     }
                     </div>
                     <ButtonSubmit>Регистрация</ButtonSubmit>

@@ -151,16 +151,9 @@ export const Chat = () => {
     const user = cookie.get('username')
 
     
-    const scrollToBottom = () => {
    
-      if(!scrolling.current.scrollHeight) {
-        return scrolling.current.scrollTop = scrolling.current && scrolling.current.scrollHeight
-      }
-      return true
-    };
     useEffect(() : any  =>  {
-      scrollToBottom()
-      return true;
+      scrolling.current.scrollTo(0,scrolling.current.scrollHeight)
     }, [msg]);
    
 // Считываем куки, для того чтоб посмотреть какие сообщения мои // 

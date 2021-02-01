@@ -3,7 +3,7 @@ import { setContext } from '@apollo/client/link/context';
 import Cookies from 'universal-cookie/es6';
 
 const httpLink = createHttpLink({
-    uri: 'http://192.168.1.48:4000/graphql',
+    uri: 'http://34.229.74.246:4000/graphql',
   });
   
   
@@ -24,7 +24,7 @@ const httpLink = createHttpLink({
   
   export const client = new ApolloClient({
     link: authLink.concat(httpLink) ,
-    uri: "192.168.1.48:4000/graphql",
+    uri: "34.229.74.246/:4000/graphql",
   
     cache: new InMemoryCache(),
     defaultOptions: {

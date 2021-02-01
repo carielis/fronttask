@@ -35,9 +35,9 @@ export const Header = () => {
         </>
         :
         <>
-        <Linked to='/login' onClick={() =>  {
-            cookie.remove('authorization')
-            window.location.reload()
+        <Linked to='/login' onClick={async () =>  {
+            await cookie.remove('authorization')
+            await window.location.reload()
         }} >Outlogin</Linked>
         <Linked to='/chat' >Chat</Linked>
         </>
