@@ -25,8 +25,7 @@ const SafeArea = styled.div`
   overflow: auto;
 `
 
-const Root = styled.div`
-`
+
 
 function App() {
 

@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Link, Redirect } from "react-router-dom"
+import React from "react"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import Cookies from "universal-cookie/es6";
 
@@ -23,7 +23,6 @@ const Linked = styled(Link)`
 
 export const Header = () => {
     const cookie = new Cookies()
-    const [ redirected, setRedirect ] = useState<boolean>(false)
     const token = cookie.get('authorization')
     
     return(
